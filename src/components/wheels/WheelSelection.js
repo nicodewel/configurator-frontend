@@ -17,7 +17,7 @@ const WheelSelection = () => {
     var price = `${selectedWheel.priceInCents % 100}` === "0" ? `${selectedWheel.priceInCents / 100},00€` : `${selectedWheel.priceInCents}`.slice(-1) === "0" ? `${selectedWheel.priceInCents / 100}0€` : `${selectedWheel.priceInCents / 100}€`
     useEffect(() => {
         wheels.sort((wheel1, wheel2) => wheel1.id - wheel2.id)
-    }, [])
+    }, [wheels])
     const setWheel = (option) => {
         dispatch(selectWheel(option))
     }
